@@ -1,0 +1,6 @@
+<launch>
+
+	<include file="$(find race_car)/launch/include/rs_camera.launch"/>
+	<include file="$(find race_car)/launch/include/imu.launch"/>
+	<include file="$(find race_car)/launch/include/laser.launch"/>
+</launch>

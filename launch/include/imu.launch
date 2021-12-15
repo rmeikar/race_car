@@ -1,0 +1,8 @@
+<launch>
+  <!-- launch  razor imu-->
+  <include file="$(find razor_imu_9dof)/launch/razor-pub.launch" />
+
+  <!-- Publish static transform from base_footprint to imu_link -->
+  <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_imu_link" args="-0.03 0 -0.05 0 0 0   /camera_link /imu_link  100"/>
+  <node pkg="tf" type="static_transform_publisher" name="transa" args="0 0 0 0 0 0   /imu_link /base_imu_link  100"/>
+</launch>

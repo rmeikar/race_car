@@ -1,0 +1,16 @@
+digraph G {
+"camera_link" -> "camera_depth_frame"[label="Broadcaster: /camera/realsense2_camera_manager\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1638526658.750 sec old)\nBuffer length: 0.000 sec\n"];
+"odom" -> "camera_link"[label="Broadcaster: /rgbd_odometry\nAverage rate: 11.588 Hz\nMost recent transform: 1638526658.614 ( 0.137 sec old)\nBuffer length: 5.609 sec\n"];
+"camera_depth_frame" -> "camera_depth_optical_frame"[label="Broadcaster: /camera/realsense2_camera_manager\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1638526658.750 sec old)\nBuffer length: 0.000 sec\n"];
+"camera_link" -> "camera_color_frame"[label="Broadcaster: /camera/realsense2_camera_manager\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1638526658.750 sec old)\nBuffer length: 0.000 sec\n"];
+"camera_aligned_depth_to_color_frame" -> "camera_color_optical_frame"[label="Broadcaster: /camera/realsense2_camera_manager\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1638526658.750 sec old)\nBuffer length: 0.000 sec\n"];
+"camera_link" -> "camera_aligned_depth_to_color_frame"[label="Broadcaster: /camera/realsense2_camera_manager\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1638526658.750 sec old)\nBuffer length: 0.000 sec\n"];
+"camera_link" -> "imu_link"[label="Broadcaster: /base_footprint_to_imu_link\nAverage rate: 10.189 Hz\nMost recent transform: 1638526658.845 ( -0.095 sec old)\nBuffer length: 4.907 sec\n"];
+"imu_link" -> "base_imu_link"[label="Broadcaster: /transa\nAverage rate: 10.188 Hz\nMost recent transform: 1638526658.843 ( -0.093 sec old)\nBuffer length: 4.908 sec\n"];
+"camera_link" -> "laser"[label="Broadcaster: /base_link_to_laser\nAverage rate: 10.192 Hz\nMost recent transform: 1638526658.767 ( -0.017 sec old)\nBuffer length: 4.808 sec\n"];
+"map" -> "odom"[label="Broadcaster: /rtabmap\nAverage rate: 20.206 Hz\nMost recent transform: 1638526658.815 ( -0.064 sec old)\nBuffer length: 4.850 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1638526658.750"[ shape=plaintext ] ;
+ }->"map";
+}

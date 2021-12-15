@@ -1,0 +1,7 @@
+<launch>
+  <!-- Joystick controller -->
+  <include file="$(find race_car)/launch/include/joystick_teleop.launch"/>
+
+	<!-- activate rtabmapping localization:=false by default -->
+	<include file="$(find race_car)/launch/include/rtab_mapping.launch" />
+</launch>
